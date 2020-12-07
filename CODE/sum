@@ -1,0 +1,1 @@
+sed 's/ //g' | sed 's/	//g' | grep -v '^$' | sed 's/^/(/' | sed 's/$/)/' | tr '\n' '+' | sed 's/+$/=/' | tr '=' '\n' | bc -l

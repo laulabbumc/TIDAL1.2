@@ -1,0 +1,44 @@
+#!/bin/bash -l
+
+# All lines starting with "#" are comments
+# All lines starting with "#$" are SGE qsub commands
+
+# Uncomment and specify a project to use (Required for BUMC projects).
+# request 10 cores and use lau lab project queue
+#$ -P lau-bumc -pe omp 10
+
+#  Give this job a name
+#$ -N test
+
+#  Join standard output and error to a single file
+#$ -j y
+
+#  Name the file where to redirect standard output and error
+# #$ -o test.qlog
+
+
+#  Send an email when the job begins and when it ends running
+#  (b = when job begins, a = if job aborts, e = when job ends)
+#$ -m bae
+
+
+# Now let's keep track of some information just in case anything goes wrong
+echo "=========================================================="
+echo "Starting on : $(date)"
+echo "Running on node : $(hostname)"
+echo "Current directory : $(pwd)"
+echo "Current job ID : $JOB_ID"
+echo "Current job name : $JOB_NAME"
+echo "Task index number : $SGE_TASK_ID"
+echo "=========================================================="
+# #$ -o test.qlog
+## test1.txt has the sra accession and read length
+/projectnb/lau-bumc/SOFTWARE/TIDAL/CODE/TIDAL_from_sra.sh test1.txt
+# first argument is filename
+# second argument is read length
+#/projectnb/lau-bumc/SOFTWARE/TIDAL/CODE/TIDAL_from_fastq.sh libname.fastq 100
+
+echo "=========================================================="
+echo "Finished on : $(date)"
+echo "=========================================================="
+
