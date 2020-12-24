@@ -5,7 +5,7 @@ For code visit `GitHub <https://github.com/laulabbumc/TIDAL1.2>`_
 
 
 About TIDAL1.2
------------
+--------------
 TIDAL is pipeline built to identify Transposon Insertion and Depletion in flies. The pipeline uses shell scrips, PERL, C and a combination of other publicly available tools. TIDAL uses a split read approach to identify Transposon Insertion and Depletion sites, and addition steps are implemented to reduce false positives.
 
 TIDAL1.2 includes a few additional features:
