@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'TIDAL'
-copyright = u'2015, Reazur Rahman'
+copyright = u'2020, Reazur Rahman'
 author = u'Reazur Rahman'
 
 # The version info for the project you're documenting, acts as replacement for

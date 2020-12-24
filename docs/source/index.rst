@@ -1,6 +1,6 @@
 
-TIDAL Documentation
-===================
+TIDAL1.2 Documentation
+======================
 
 For code visit `GitHub <https://github.com/laulabbumc/TIDAL1.2>`_
 
