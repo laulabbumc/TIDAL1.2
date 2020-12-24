@@ -10,7 +10,7 @@ TIDAL is pipeline built to identify Transposon Insertion and Depletion in flies.
 
 TIDAL1.2 includes a few additional features:
 - Incorporation of IGEs (Immobile Genetic Elements) and tracking there insertion/deletion frequency
-- Generate counts for transposon as proxy for copy number 
+- Generate counts for transposon as proxy for copy number (not part of the default TIDAL output)
 
 Features
 --------
