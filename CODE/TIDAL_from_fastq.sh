@@ -1,7 +1,9 @@
 #!/bin/sh
 
 #module the necessary modules of software (grid engine specific), not needed in other OS
-source /projectnb/lau-bumc/SOFTWARE/TIDAL/github/TIDAL1.2/CODE/TIDAL_module.sh
+#source /projectnb/lau-bumc/SOFTWARE/TIDAL/github/TIDAL1.2/CODE/TIDAL_module.sh
+source /projectnb/lau-bumc/SOFTWARE/TIDAL/CODE/TIDAL_module.sh
+
 #runs the TIDAL pipeline
 CODEDIR="/projectnb/lau-bumc/SOFTWARE/TIDAL/github/TIDAL1.2/CODE"
 
@@ -23,3 +25,8 @@ $CODEDIR/setup.sh $lib
 $CODEDIR/depletion_pipeline.sh $lib".uq.polyn" $read_len
 #compile insertion and depletion results
 $CODEDIR/last_part.sh $lib $CODEDIR
+
+#run the TE_coverage_TIDAL.sh 
+pushd insertion
+$CODEDIR/TE_coverage_TIDAL.sh $lib".uq.polyn" $prefix".sort.bam"
+popd

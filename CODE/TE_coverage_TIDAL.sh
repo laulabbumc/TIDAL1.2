@@ -6,6 +6,8 @@ source /projectnb/lau-bumc/SOFTWARE/TIDAL/CODE/TIDAL_module.sh
 
 input=$1
 prefix=${1%.fastq.uq.polyn*}
+database="/projectnb/lau-bumc/SOFTWARE/TIDAL/TE_count_database/dm_TE_gene"
+TE_fasta="/projectnb/lau-bumc/SOFTWARE/TIDAL/TE_count_database/consensus_TE_gene_fly.fa"
 
 #genome_bam=$prefix".sort.bam"
 genome_bam=$2
@@ -13,14 +15,14 @@ read_count=$(samtools view -c $genome_bam)
 #normalized to per million mapped reads
 #read_count=1000000
 
-database="/projectnb/lau-bumc/SOFTWARE/TIDAL/TE_count_database/dm_TE_gene"
+#database="/projectnb/lau-bumc/SOFTWARE/TIDAL/TE_count_database/dm_TE_gene"
 align_input=$input
 $CODEDIR/align_to_gene_list_bowtie2.sh $input $database "TE consensus mapping"
 
 #the bed have been created...
 
 
-TE_fasta="/projectnb/lau-bumc/SOFTWARE/TIDAL/TE_count_database/consensus_TE_gene_fly.fa"
+#TE_fasta="/projectnb/lau-bumc/SOFTWARE/TIDAL/TE_count_database/consensus_TE_gene_fly.fa"
 perl $CODEDIR/generate_read_count_TE.pl -q $align_input -r $read_count -s $TE_fasta > $prefix".TE_table.xls"
 
 

@@ -89,7 +89,7 @@ Update the following shell scripts with the location of the TIDAL code, annotati
 
     #location of TIDAL code from root
     CODEDIR="/location_from_root/TIDAL/CODE"
-    #location of Trimmomatic
+    #location of Trimmomatic, if needed
     TRIMMOMATICDIR="/location_from_root/Trimmomatic-0.30"  
 
 **insert_pipeline.sh**
@@ -141,6 +141,15 @@ Update the following shell scripts with the location of the TIDAL code, annotati
     table_lookup="/location_from_root/TIDAL/annotation/Tidalbase_Dmel_TE_classifications_2015.txt"
     #tab delimited file with chromosome name and length
     chrlen_file="/location_from_root/TIDAL/annotation/dm6.chr.len"
+
+**TE_coverage_TIDAL.sh**
+::
+
+    #location of TIDAL code
+    CODEDIR="/location_from_root/TIDAL/CODE"
+    database="/location_from_root/TIDAL/annotation/dm_TE"
+    TE_fasta="/location_from_root/TIDAL/annotation/Tidalbase_transposon_sequence.fa"
+
 
 **TIDAL_from_fastq.sh**
 ::
