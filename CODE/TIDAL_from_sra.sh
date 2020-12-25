@@ -1,7 +1,7 @@
 #!/bin/bash
-source /projectnb/lau-bumc/SOFTWARE/TIDAL/CODE/TIDAL_module.sh
-#CODEDIR="/nlmusr/reazur/linux/NELSON/TIDAL/CODE"
-CODEDIR="/projectnb/lau-bumc/SOFTWARE/TIDAL/CODE"
+#load the required software modules if needed 
+#source /projectnb/lau-bumc/SOFTWARE/TIDAL/CODE/TIDAL_module.sh
+CODEDIR="/projectnb/lau-bumc/SOFTWARE/TIDAL/github/TIDAL1.2/CODE"
 
 #This script download the sra file, converts it to fastq, and then runs the TIDAL pipeline
 #ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/

@@ -1,9 +1,9 @@
 #!/bin/sh
 
-source /projectnb/lau-bumc/SOFTWARE/TIDAL/CODE/TIDAL_module.sh
+#module the necessary modules of software (grid engine specific), not needed in other OS
+source /projectnb/lau-bumc/SOFTWARE/TIDAL/github/TIDAL1.2/CODE/TIDAL_module.sh
 #runs the TIDAL pipeline
-#CODEDIR="/nlmusr/reazur/linux/NELSON/TIDAL/CODE"
-CODEDIR="/projectnb/lau-bumc/SOFTWARE/TIDAL/CODE"
+CODEDIR="/projectnb/lau-bumc/SOFTWARE/TIDAL/github/TIDAL1.2/CODE"
 
 #pass the fastq filename as argument
 lib=$1
@@ -16,7 +16,7 @@ $CODEDIR/data_prep.sh $lib
 
 #run the insertion part of TIDAL
 $CODEDIR/insert_pipeline.sh $lib".uq.polyn" $read_len  
-#exit
+
 #set up symbolic links to do the depletion part of TIDAL
 $CODEDIR/setup.sh $lib
 #run the depletion part of TIDAL
