@@ -6,13 +6,13 @@ Installation of TIDAL pipeline involves installing a set of softwares, downloadi
 
 Software Dependencies
 ---------------------
-- fastq-dump (sra toolkit, tested with  v. 2.5.0 )
-- Trimmomatics (v. 0.30)
-- Bowtie (v. 1.0.0) and Bowtie2 (v. 2.1.0)
+- fastq-dump (sra toolkit, tested with  v. 2.8.2-1 )
+- Trimmomatics (v. 0.36)
+- Bowtie (v. 1.0.0) and Bowtie2 (v. 2.3.2)
 - BLAT (v. 35x1)
-- `Control-FREEC <http://bioinfo-out.curie.fr/projects/freec/>`_ v. 7.2, run freec with mapability tracks (included in TIDAL for dm6))
+- `Control-FREEC <http://bioinfo-out.curie.fr/projects/freec/>`_ v.11, run freec with mapability tracks (included in TIDAL for dm6))
 - bedtools suite (v. 2.17.0)
-- samtools (0.1.19)
+- samtools (1.10)
 - awk and other basic unix tools (likely installed already)
 - Perl (64bit)
 
