@@ -1,37 +1,25 @@
 #!/bin/sh
-plot_window_size=1
-mismatch=2
 
-GHOME="/projectnb/lau-bumc/gchirn"
-RHOME="/projectnb/lau-bumc/reazur"
 CODEDIR="/projectnb/lau-bumc/SOFTWARE/TIDAL/CODE"
 
 database=$2
-#doumentation test for qc
 text=$3
-#database="kawaoka_transposon"
-#database=$RHOME"/NELSON/Genome_resequence/essential_gene/essential_gene_db"
-
-
 input=$1
 
 output=$input".sam"
 
 #run bowtie 2
-#bowtie2 -f -N 0 -p 10 --end-to-end -x $database -S $output -U $input
 bowtie2 -f --sensitive -p 9 --end-to-end -x  $database -S $output -U $input
 samtools view -Sh -q 10 $output > high_quality.sam
 mv high_quality.sam $output
 
 cp $output z0.$1
 
-#mkdir -p $RHOME/tmp
+
 grep '^@' z0.$1 > $1.rep.sam
 cat z0.$1 | grep -v '^@' | grep -v '	4	\*	0	0	\*	\*	0	0	' | sort -u >> $1.rep.sam
 
-#echo -n "$1	reads mapped (from sam file)	" >> summary; 
-#grep -v '^@' $1.rep.sam | cut -f1 | sort -u | cut -d':' -f2 | $CODEDIR/sum >> summary
-#
+
 #echo "Done with first part"
 
 #############################
